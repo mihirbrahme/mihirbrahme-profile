@@ -25,7 +25,7 @@ export function HeroSection() {
       {/* Radial gradient overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(59,130,246,0.08)_0%,transparent_70%)]" />
 
-      <div className="section-container relative z-10 py-32 md:py-40">
+      <div className="section-container relative z-10 pt-40 pb-32 md:pt-48 md:pb-40">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
           {/* Profile image */}
           <motion.div
