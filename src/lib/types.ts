@@ -71,11 +71,10 @@ export interface Skill {
 }
 
 export interface PhilosophyLens {
-  framework: string;
-  author: string;
-  concepts: string[];
-  application: string;
-  example?: string;
+  principle: string;
+  rooted: string;
+  whyItMatters: string;
+  howIApply: string;
 }
 
 export interface EcosystemPartner {

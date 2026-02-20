@@ -442,28 +442,28 @@ export const languages: string[] = ["English", "Hindi", "Marathi"];
 
 export const philosophyLenses: PhilosophyLens[] = [
   {
-    framework: "The Incerto",
-    author: "Nassim Nicholas Taleb",
-    concepts: ["Antifragility", "Skin in the game", "Black swans"],
-    application:
-      "Designing for robustness and aligned incentives\u2014systems that benefit from disorder rather than merely surviving it.",
-    example: "Shaped how I designed the certification toolkit to benefit from ecosystem changes\u2014each new regulation strengthened rather than broke the system.",
+    principle: "Design for Disorder, Not Just Stability",
+    rooted: "Taleb\u2019s Antifragility & Skin in the Game",
+    whyItMatters:
+      "In ecosystems with shifting regulations and evolving participants, fragile systems break under change. Antifragile systems get stronger. Every disruption should be a forcing function for improvement\u2014not a fire drill.",
+    howIApply:
+      "The certification toolkit I designed didn\u2019t just survive ecosystem rule changes\u2014each new regulation made the validation framework more robust and comprehensive, turning volatility into a product advantage.",
   },
   {
-    framework: "Behavioral Science",
-    author: "Kahneman + Rory Sutherland",
-    concepts: ["Incentives", "Friction", "Trust", "Choice framing"],
-    application:
-      "Adoption depends on how choices are framed. Systems must account for real human behavior, not idealized workflows.",
-    example: "Informed the UX and onboarding design for 200+ ecosystem participants\u2014reducing friction at every certification step.",
+    principle: "Reduce Friction, Don\u2019t Just Add Features",
+    rooted: "Kahneman, Thaler & Sutherland \u2014 Behavioral Science & Nudge Theory",
+    whyItMatters:
+      "People don\u2019t fail because the system lacks capability\u2014they fail because the system creates friction at decision points. Adoption is a design problem, not a training problem. Frame choices well, reduce cognitive load, and make the right action the easy action.",
+    howIApply:
+      "Applied across onboarding and certification journeys for 200+ ecosystem participants\u2014restructuring step sequences, simplifying evidence collection, and eliminating unnecessary decisions that caused drop-offs.",
   },
   {
-    framework: "Playing to Win",
-    author: "Roger Martin",
-    concepts: ["Where to play", "How to win", "Trade-offs"],
-    application:
-      "Strategy as explicit trade-offs\u2014clarity on what to stop doing is as important as what to start.",
-    example: "Guided the decision to focus deeply on DPI certification rather than spreading thin across all compliance types.",
+    principle: "Strategy Is What You Stop Doing",
+    rooted: "Roger Martin\u2019s Playing to Win",
+    whyItMatters:
+      "A roadmap full of everything is a roadmap with no choices. Real strategy requires explicit trade-offs\u2014clarity on where to play, how to win, and what to deliberately deprioritize. Focus beats breadth.",
+    howIApply:
+      "Guided the decision to build deep expertise in DPI certification rather than spreading thin across generic compliance. This focus drove market leadership and >$1M in deal conversions at global summits.",
   },
 ];
 
