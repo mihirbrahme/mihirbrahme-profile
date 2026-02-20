@@ -20,12 +20,11 @@ export function EducationSection() {
           title="Credentials & learning"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
           {education.map((edu, i) => (
             <FadeInView
               key={edu.degree}
               delay={i * 0.1}
-              className={i === 0 ? "md:col-span-2 lg:col-span-1" : ""}
             >
               <div
                 className={`h-full p-5 rounded-2xl border card-glow ${
@@ -51,7 +50,7 @@ export function EducationSection() {
                     <p className="text-xs text-text-secondary mt-1 leading-relaxed">
                       {edu.institution}
                     </p>
-                    <div className="flex items-center gap-2 mt-2">
+                    <div className="flex items-center gap-2 mt-2 flex-wrap">
                       <span className="text-xs font-mono text-text-muted">
                         {edu.year}
                       </span>
@@ -61,6 +60,11 @@ export function EducationSection() {
                         </span>
                       )}
                     </div>
+                    {edu.relevance && (
+                      <p className="mt-2 text-xs text-text-muted italic leading-relaxed">
+                        {edu.relevance}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>

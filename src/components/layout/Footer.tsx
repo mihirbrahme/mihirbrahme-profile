@@ -1,4 +1,4 @@
-import { Github, Mail, MapPin } from "lucide-react";
+import { Github, Mail, MapPin, Linkedin } from "lucide-react";
 
 export function Footer() {
   return (
@@ -10,7 +10,7 @@ export function Footer() {
               Mihir Brahme
             </span>
             <span className="text-sm text-text-muted">
-              Consultant/Lead — Population-Scale Platforms
+              Business Analyst | Product Owner | Pre-Sales Lead
             </span>
           </div>
 
@@ -22,6 +22,16 @@ export function Footer() {
             >
               <Mail size={16} />
               <span className="hidden sm:inline">mihir.brahme@gmail.com</span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/mihirbrahme"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-text-secondary hover:text-accent-blue transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin size={16} />
+              <span className="hidden sm:inline">LinkedIn</span>
             </a>
             <a
               href="https://github.com/mihirbrahme"

@@ -6,6 +6,12 @@ import { experience } from "@/lib/data";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeInView } from "@/components/animations/FadeInView";
 
+const roleBadgeColors: Record<string, string> = {
+  "Business Analyst": "bg-accent-blue/10 text-accent-blue border-accent-blue/20",
+  "Product Owner": "bg-accent-teal/10 text-accent-teal border-accent-teal/20",
+  "Pre-Sales Lead": "bg-purple-500/10 text-purple-400 border-purple-500/20",
+};
+
 export function ExperienceSection() {
   const [expandedEntries, setExpandedEntries] = useState<Record<string, boolean>>({});
 
@@ -52,6 +58,11 @@ export function ExperienceSection() {
                       <p className="text-sm text-text-muted mt-1">
                         {exp.period} &middot; {exp.location}
                       </p>
+                      {exp.narrative && (
+                        <p className="mt-3 text-sm text-text-secondary italic leading-relaxed border-l-2 border-accent-teal/30 pl-4">
+                          {exp.narrative}
+                        </p>
+                      )}
                     </div>
 
                     {/* Entries */}
@@ -67,16 +78,32 @@ export function ExperienceSection() {
                           >
                             <button
                               onClick={() => toggleEntry(key)}
-                              className="w-full px-4 py-3 flex items-center justify-between text-left hover:bg-bg-tertiary/30 transition-colors"
+                              className="w-full px-4 py-3 flex items-start justify-between text-left hover:bg-bg-tertiary/30 transition-colors"
                             >
-                              <span className="text-sm font-medium text-text-primary">
-                                {entry.title}
-                              </span>
-                              {isExpanded ? (
-                                <ChevronDown size={16} className="text-text-muted flex-shrink-0" />
-                              ) : (
-                                <ChevronRight size={16} className="text-text-muted flex-shrink-0" />
-                              )}
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center gap-2 flex-wrap">
+                                  <span className="text-sm font-medium text-text-primary">
+                                    {entry.title}
+                                  </span>
+                                  {entry.roleBadge && (
+                                    <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full border ${roleBadgeColors[entry.roleBadge] || "bg-bg-tertiary/50 text-text-muted border-border"}`}>
+                                      {entry.roleBadge}
+                                    </span>
+                                  )}
+                                </div>
+                                {entry.highlight && (
+                                  <p className="text-xs text-accent-teal/80 mt-1">
+                                    {entry.highlight}
+                                  </p>
+                                )}
+                              </div>
+                              <div className="flex-shrink-0 ml-2 mt-1">
+                                {isExpanded ? (
+                                  <ChevronDown size={16} className="text-text-muted" />
+                                ) : (
+                                  <ChevronRight size={16} className="text-text-muted" />
+                                )}
+                              </div>
                             </button>
 
                             {isExpanded && (

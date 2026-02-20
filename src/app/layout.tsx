@@ -18,31 +18,34 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Mihir Brahme — Consultant/Lead | Population-Scale Platforms, DPI, AI",
+  title: "Mihir Brahme — Business Analyst | Product Owner | Pre-Sales Lead",
   description:
-    "I build and deliver population-scale technology where the real test is not a demo—it's correctness, resilience, and adoption under real-world complexity.",
+    "Senior Business Analyst, Product Owner, and Pre-Sales Lead building population-scale platforms across DPI ecosystems. 5+ years in digital public infrastructure, ecosystem governance, and AI automation.",
   keywords: [
     "Mihir Brahme",
+    "Business Analyst",
+    "Product Owner",
+    "Pre-Sales Lead",
     "DPI",
     "Digital Public Infrastructure",
     "Population Scale Platforms",
     "AI Automation",
     "Interoperability",
-    "Consultant",
+    "Ecosystem Governance",
   ],
   authors: [{ name: "Mihir Brahme" }],
   openGraph: {
     title:
-      "Mihir Brahme — Consultant/Lead | Population-Scale Platforms, DPI, AI",
+      "Mihir Brahme — Business Analyst | Product Owner | Pre-Sales Lead",
     description:
-      "I build and deliver population-scale technology where the real test is not a demo—it's correctness, resilience, and adoption under real-world complexity.",
+      "Senior Business Analyst, Product Owner, and Pre-Sales Lead building population-scale platforms across DPI ecosystems.",
     type: "website",
     locale: "en_US",
     siteName: "Mihir Brahme",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mihir Brahme — Population-Scale Platforms & DPI",
+    title: "Mihir Brahme — BA | Product Owner | Pre-Sales Lead",
     description:
       "Building robust, interoperable systems at scale with AI-readiness and governance.",
   },
@@ -67,7 +70,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               name: "Mihir Surendra Brahme",
-              jobTitle: "Consultant/Lead — Population-Scale Platforms",
+              jobTitle: "Senior Business Analyst | Product Owner | Pre-Sales Lead",
               worksFor: {
                 "@type": "Organization",
                 name: "Suma Soft Pvt. Ltd.",
@@ -79,6 +82,10 @@ export default function RootLayout({
               },
               email: "mihir.brahme@gmail.com",
               url: "https://github.com/mihirbrahme",
+              sameAs: [
+                "https://www.linkedin.com/in/mihirbrahme",
+                "https://github.com/mihirbrahme",
+              ],
             }),
           }}
         />

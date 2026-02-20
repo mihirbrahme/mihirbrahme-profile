@@ -4,6 +4,7 @@ import { projects } from "@/lib/data";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FadeInView } from "@/components/animations/FadeInView";
 import { Badge } from "@/components/ui/Badge";
+import { Target, Lightbulb, CheckCircle, TrendingUp } from "lucide-react";
 
 export function ProjectsSection() {
   return (
@@ -20,7 +21,7 @@ export function ProjectsSection() {
             <FadeInView key={project.number} delay={i * 0.1}>
               <div className="h-full p-6 rounded-2xl bg-bg-secondary/50 border border-border card-glow group">
                 {/* Project number and tags */}
-                <div className="flex items-start justify-between mb-4">
+                <div className="flex items-start justify-between mb-3">
                   <span className="text-4xl font-bold gradient-text opacity-60">
                     0{project.number}
                   </span>
@@ -33,36 +34,69 @@ export function ProjectsSection() {
                   </div>
                 </div>
 
-                <h3 className="text-lg font-semibold text-text-primary mb-4">
+                <h3 className="text-lg font-semibold text-text-primary mb-1">
                   {project.title}
                 </h3>
 
+                {/* Role badge */}
+                <p className="text-xs font-mono text-accent-teal/80 mb-4">
+                  Role: {project.role}
+                </p>
+
+                {/* Case study format */}
                 <div className="space-y-3">
-                  <div>
-                    <span className="text-xs font-mono text-text-muted uppercase tracking-wider">
-                      What it was
-                    </span>
-                    <p className="mt-1 text-sm text-text-secondary">
-                      {project.whatItWas}
-                    </p>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 mt-0.5">
+                      <Target size={14} className="text-red-400/70" />
+                    </div>
+                    <div>
+                      <span className="text-xs font-mono text-text-muted uppercase tracking-wider">
+                        Challenge
+                      </span>
+                      <p className="mt-0.5 text-sm text-text-secondary leading-relaxed">
+                        {project.challenge}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <span className="text-xs font-mono text-text-muted uppercase tracking-wider">
-                      My focus
-                    </span>
-                    <p className="mt-1 text-sm text-text-secondary">
-                      {project.myFocus}
-                    </p>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 mt-0.5">
+                      <Lightbulb size={14} className="text-accent-blue/70" />
+                    </div>
+                    <div>
+                      <span className="text-xs font-mono text-text-muted uppercase tracking-wider">
+                        Approach
+                      </span>
+                      <p className="mt-0.5 text-sm text-text-secondary leading-relaxed">
+                        {project.approach}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <span className="text-xs font-mono text-text-muted uppercase tracking-wider">
-                      What this demonstrates
-                    </span>
-                    <p className="mt-1 text-sm text-accent-teal/80">
-                      {project.demonstrates}
-                    </p>
+                  <div className="flex gap-3">
+                    <div className="flex-shrink-0 mt-0.5">
+                      <CheckCircle size={14} className="text-accent-teal/70" />
+                    </div>
+                    <div>
+                      <span className="text-xs font-mono text-text-muted uppercase tracking-wider">
+                        Outcome
+                      </span>
+                      <p className="mt-0.5 text-sm text-accent-teal/80 leading-relaxed">
+                        {project.outcome}
+                      </p>
+                    </div>
                   </div>
                 </div>
+
+                {/* Impact metric */}
+                {project.impact && (
+                  <div className="mt-4 pt-3 border-t border-border/50">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-blue/5 border border-accent-blue/20">
+                      <TrendingUp size={12} className="text-accent-blue" />
+                      <span className="text-xs font-semibold text-accent-blue">
+                        {project.impact}
+                      </span>
+                    </div>
+                  </div>
+                )}
               </div>
             </FadeInView>
           ))}

@@ -39,6 +39,11 @@ export function PhilosophySection() {
                 <p className="text-sm text-text-secondary leading-relaxed">
                   {lens.application}
                 </p>
+                {lens.example && (
+                  <p className="mt-3 text-xs text-accent-teal/70 italic leading-relaxed border-t border-border/50 pt-3">
+                    {lens.example}
+                  </p>
+                )}
               </div>
             </FadeInView>
           ))}

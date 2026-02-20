@@ -38,7 +38,11 @@ export function DesignDNASection() {
             >
               <div className="h-full p-6 rounded-2xl bg-white/[0.03] backdrop-blur-sm border border-white/[0.06] card-glow group">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center text-accent-blue group-hover:bg-accent-blue/20 transition-colors">
+                  <div className={`w-10 h-10 rounded-lg flex items-center justify-center transition-colors ${
+                    i % 2 === 0
+                      ? "bg-accent-blue/10 text-accent-blue group-hover:bg-accent-blue/20"
+                      : "bg-accent-teal/10 text-accent-teal group-hover:bg-accent-teal/20"
+                  }`}>
                     {icons[i]}
                   </div>
                   <span className="text-xs font-mono text-text-muted uppercase tracking-wider">
@@ -51,6 +55,11 @@ export function DesignDNASection() {
                 <p className="text-sm text-text-secondary leading-relaxed">
                   {principle.description}
                 </p>
+                {principle.example && (
+                  <p className="mt-3 text-xs text-text-muted italic leading-relaxed border-t border-border/50 pt-3">
+                    {principle.example}
+                  </p>
+                )}
               </div>
             </FadeInView>
           ))}

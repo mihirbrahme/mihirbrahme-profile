@@ -1,8 +1,9 @@
 "use client";
 
 import {
-  Database,
-  FileCode,
+  Search,
+  Package,
+  TrendingUp,
   Workflow,
   Bot,
   LayoutDashboard,
@@ -13,8 +14,9 @@ import { FadeInView } from "@/components/animations/FadeInView";
 import { AnimatedCounter } from "@/components/animations/AnimatedCounter";
 
 const iconMap: Record<string, React.ReactNode> = {
-  Database: <Database size={28} />,
-  FileCode: <FileCode size={28} />,
+  Search: <Search size={28} />,
+  Package: <Package size={28} />,
+  TrendingUp: <TrendingUp size={28} />,
   Workflow: <Workflow size={28} />,
   Bot: <Bot size={28} />,
   LayoutDashboard: <LayoutDashboard size={28} />,
@@ -26,23 +28,48 @@ export function CompetenciesSection() {
       <div className="section-container">
         <SectionHeading
           label="Core Strengths"
-          title="What I'm best at"
+          title="What I bring to the table"
+          subtitle="A full-stack skill set across business analysis, product ownership, and pre-sales"
         />
 
         {/* Competency cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {competencies.map((comp, i) => (
             <FadeInView key={comp.title} delay={i * 0.1}>
-              <div className="h-full p-6 rounded-2xl bg-bg-secondary/50 border border-border card-glow">
-                <div className="w-12 h-12 rounded-xl bg-accent-blue/10 flex items-center justify-center text-accent-blue mb-4">
+              <div className="h-full p-6 rounded-2xl bg-bg-secondary/50 border border-border card-glow group">
+                <div
+                  className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${
+                    i % 2 === 0
+                      ? "bg-accent-blue/10 text-accent-blue"
+                      : "bg-accent-teal/10 text-accent-teal"
+                  }`}
+                >
                   {iconMap[comp.icon]}
                 </div>
                 <h3 className="text-lg font-semibold text-text-primary mb-2">
                   {comp.title}
                 </h3>
-                <p className="text-sm text-text-secondary leading-relaxed">
+                <p className="text-sm text-text-secondary leading-relaxed mb-3">
                   {comp.description}
                 </p>
+                {comp.linkTo && (
+                  <a
+                    href={comp.linkTo}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document
+                        .querySelector(comp.linkTo!)
+                        ?.scrollIntoView({ behavior: "smooth" });
+                    }}
+                    className={`inline-flex items-center gap-1 text-xs font-medium transition-colors ${
+                      i % 2 === 0
+                        ? "text-accent-blue/70 hover:text-accent-blue"
+                        : "text-accent-teal/70 hover:text-accent-teal"
+                    }`}
+                  >
+                    See this in action &rarr;
+                  </a>
+                )}
               </div>
             </FadeInView>
           ))}
