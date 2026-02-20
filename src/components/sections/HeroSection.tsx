@@ -32,7 +32,7 @@ export function HeroSection() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, ease: [0.25, 0.4, 0.25, 1] }}
-            className="mb-8"
+            className="mb-8 mt-10 md:mt-14"
           >
             <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full glow-pulse">
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent-blue to-accent-teal p-[3px]">
